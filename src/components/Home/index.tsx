@@ -30,6 +30,14 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="container groupBtnWithPagesNumbers">
+                <div className="row">
+                    <div className="col-12">
+                        <h2>1 2 3 4 5 6</h2>
+                    </div>
+                </div>
+            </div>
             
 
 
