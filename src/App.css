@@ -88,28 +88,82 @@ body .groupBtnWithPagesNumbers {
   margin-bottom: 48px;
 }
 
-* .sectionPriceOfGoods{
+* .sectionPriceOfGoods {
   width: 100%;
 }
-* .sectionPriceOfGoodsName{
+
+* .sectionPriceOfGoodsName {
   justify-content: left;
   text-align: left;
 }
-* .sectionPriceOfGoodsPrise{
+
+* .sectionPriceOfGoodsPrise {
   justify-content: right;
   text-align: right;
 }
 
-* .starsRatingButtonsGroup{
+* .starsRatingButtonsGroup {
   justify-content: left;
   text-align: start;
   width: 100%;
 }
 
-* .starsRatingButtonsGroupUL{
+* .starsRatingButtonsGroupUL {
   list-style: none;
 }
 
-* .starsRatingButtonsGroupUL li{
-  display:inline;
+* .starsRatingButtonsGroupUL li {
+  display: inline;
+}
+
+* .shop-cart-button {
+  float: right;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+
+* .shop-cart-button:hover,
+* .shop-cart-button.active {
+  color: #dc3d3d;
+  transform: scale(1.5);
+}
+
+* .shop-cart {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  background: #fafafa;
+  box-shadow: 4px 5px 15px -7px #606060;
+  z-index: 1000;
+
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+* .shop-cart .empty h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+* .shop-cart .item {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+* .shop-cart .item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+* .shop-cart p {
+  color: #797979;
+  font-weight: 600;
+}
+
+* .shop-cart .item img {
+  width: 70px;
+  float: left;
+  margin-right: 20px;
 }

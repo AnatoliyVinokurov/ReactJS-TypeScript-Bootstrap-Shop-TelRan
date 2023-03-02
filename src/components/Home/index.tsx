@@ -1,7 +1,20 @@
-import RenderItems from './RenderItems'
-import Slider from './Slider'
+import Items from './Items';
+import Slider from './Slider';
 
-const Home = () => {
+interface Item {
+    id: number;
+    title: string;
+    img: string;
+    desc: string;
+    category: string;
+    price: string;
+}
+
+interface Props {
+    items: Item[];
+    onAdd: (item: Item) => void;
+}
+const Home: React.FC<Props> = ({ items, onAdd }) => {
     return (
         <body>
             <div className='myslider'>
@@ -18,7 +31,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <RenderItems />
+            <Items items={items} onAdd={onAdd} />
 
             <div className="container groupBtnWithPagesNumbers">
                 <div className="row">

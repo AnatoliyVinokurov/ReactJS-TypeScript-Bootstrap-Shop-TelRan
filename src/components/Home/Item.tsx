@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface ItemProps {
-  item: {
-    id: number;
-    title: string;
-    img: string;
-    desc: string;
-    category: string;
-    price: string;
-  };
+  id: number;
+  title: string;
+  img: string;
+  desc: string;
+  category: string;
+  price: string;
 }
 
-const Item: React.FC<ItemProps> = ({ item }) => {
-  const [count, setCount] = useState<number>(0);
+interface Props {
+  item: ItemProps;
+  onAdd: (item: ItemProps) => void;
+}
+
+const Item: React.FC<Props> = ({ item, onAdd }) => {
+  const handleClick = () => {
+    onAdd(item);
+  };
 
   return (
     <div className='item'>
-      <img src={'./img/' + item.img} alt={item.title} />
+      <img src={`./img/${item.img}`} alt={item.title} />
       <h2>{item.title}</h2>
       <p>{item.desc}</p>
-      <b>{item.price} $</b>
-      <div className='add-to-cart' onClick={() => setCount(count + 1)}>
+      <b>{`${item.price} $`}</b>
+      <div className='add-to-cart' onClick={handleClick}>
         +
       </div>
-      <div>{count}</div>
     </div>
   );
 };

@@ -1,13 +1,32 @@
-import React from 'react'
-
-import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Order from './Home/Order';
 
-export default function NaviBar() {
+interface Props {
+    orders: Array<any>;
+}
+
+const NaviBar: React.FC<Props> = ({ orders }) => {
+
+    const [cartOpen, setCartOpen] = useState<boolean>(false);
+
+    const showOrders = () => {
+        return orders.map((el) => (
+            <Order key={el.id} item={el} />
+        ));
+    };
+
+    const showNothing = () => {
+        return (
+            <div className='empty'>
+                <h2>Cart is empty</h2>
+            </div>
+        );
+    };
+
     return (
 
         <header>
@@ -38,6 +57,23 @@ export default function NaviBar() {
                             <Nav.Link className='navelementbtn' href="#action7">
                                 <span className="badge badge-pill bg-danger">1</span>
                                 <span><i className="fas fa-shopping-bag"></i></span>
+
+
+
+
+                                <button
+                                    onClick={() => setCartOpen(!cartOpen)}
+                                    className={`shop-cart-button ${cartOpen && 'active'}`}
+                                >card</button>
+                                {cartOpen && (
+
+                                    <div className='shop-cart' style={{ display: 'block', position: 'initial' }}>
+                                        {orders.length > 0 ? showOrders() : showNothing()}
+                                    </div>
+                                )}
+
+
+
                             </Nav.Link>
                             <Nav.Link className='navelementbtn' href="#action8"><i className="fas fa-user-alt"></i></Nav.Link>
 
@@ -50,3 +86,4 @@ export default function NaviBar() {
 
     )
 }
+export default NaviBar;
