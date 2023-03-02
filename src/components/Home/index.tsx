@@ -1,7 +1,4 @@
-import React from 'react'
-import Cards from './Cards'
-import CartsfromBootstrapstandart from './CartsfromBootstrapstandart'
-import CartsMI from './CartsMI'
+import RenderItems from './RenderItems'
 import Slider from './Slider'
 
 const Home = () => {
@@ -21,7 +18,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <Cards/>
+            <RenderItems />
 
             <div className="container groupBtnWithPagesNumbers">
                 <div className="row">
@@ -30,16 +27,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
-            <div className="container groupBtnWithPagesNumbers">
-                <div className="row">
-                    <div className="col-12">
-                        <h2>1 2 3 4 5 6</h2>
-                    </div>
-                </div>
-            </div>
-            
-
 
         </body>
 
